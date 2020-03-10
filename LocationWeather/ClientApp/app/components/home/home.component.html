@@ -1,0 +1,30 @@
+<h1>Location Weather</h1>
+<p>A weather forecast app</p>
+
+<div class="form-group row">
+    <div class="col-xs-4">
+        <label for="city">City Search:</label>
+        <input type="text" class="form-control" id="city" width="300" [(ngModel)]="chosenCity" placeholder="Enter a City" />
+        <input id="searchCity" type="button" class="btn btn-primary" value="Get Weather" (click)="getWeather(chosenCity)" />
+    </div>  
+</div>
+<div *ngIf="weather" class="col-xs-6">
+    <h3>Weather for {{weather.city}}</h3>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Temp</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{weather.temp}}&deg;F</td>
+                <td>{{weather.summary}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
